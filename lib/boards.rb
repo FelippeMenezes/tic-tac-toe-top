@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
-board = [['1A', '1B', '1C'], ['2A', '2B', '2C'], ['3A', '3B', '3C']]
+class Board
+  attr_accessor :line_1, :line_2, :line_3
 
-p board[0]
-p board[1]
-p board[2]
+  def initialize(line_1, line_2, line_3)
+    @line_1 = line_1
+    @line_2 = line_2
+    @line_3 = line_3
+  end
+end

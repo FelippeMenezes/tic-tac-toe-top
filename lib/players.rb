@@ -8,6 +8,3 @@ class Player
     @role = role
   end
 end
-
-player_one = Player.new("Felippe", "X")
-p player_one.name
