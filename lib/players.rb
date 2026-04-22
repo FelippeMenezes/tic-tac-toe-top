@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'colorize'
 
 class Player
   attr_accessor :name, :role
@@ -19,14 +20,14 @@ class Player
   end
 
   def ask_player_one_role
-    puts "#{@name}, choose your role('x' or 'o'):"
+    puts "#{@name.colorize(:yellow)}, choose your role('x' or 'o'):"
     @role = gets.chomp
     puts @role.class
     if @role != "x" && @role != "o"
       puts "Wrong choice, try again!"
       ask_player_one_role
     else
-      puts "#{@name}, you will play with '#{@role}'"
+      puts "#{@name.colorize(:yellow)}, you will play with '#{@role.colorize(:yellow)}'"
     end
     @role
   end
@@ -37,6 +38,6 @@ class Player
     else
       @role = "x"
     end
-    puts "#{@name}, you will play with '#{@role}'"
+    puts "#{@name.colorize(:green)}, you will play with '#{@role.colorize(:green)}'"
   end
 end

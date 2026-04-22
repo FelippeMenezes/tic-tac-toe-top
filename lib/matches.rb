@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'colorize'
 
 class Match
   attr_accessor :player_one, :player_two, :board
@@ -28,7 +29,7 @@ class Match
     while play_match == true
       counter_turn += 1
       if player_turn == true
-        puts "#{@player_one.name}, choose your move."
+        puts "#{@player_one.name.colorize(:yellow)}, choose your move."
         player_one_move = gets.chomp
 
         if player_one_move == "1" && @board.line_1[0] != "o" && @board.line_1[0] != "x"
@@ -61,7 +62,7 @@ class Match
         end
 
       else
-        puts "#{@player_two.name}, choose your move."
+        puts "#{@player_two.name.colorize(:green)}, choose your move."
         player_two_move = gets.chomp
 
         if player_two_move == "1" && @board.line_1[0] != "o" && @board.line_1[0] != "x"
@@ -98,115 +99,114 @@ class Match
         play_match = false
         if @player_one.role == "x"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.colorize(:green)} won!"
         end
       elsif @board.line_1 == ["o", "o", "o"] || @board.line_2 == ["o", "o", "o"] || @board.line_3 == ["o", "o", "o"]
         play_match = false
         if @player_one.role == "o"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[2] == "x" && @board.line_2[1] == "x" && @board.line_3[0] == "x"
         play_match = false
         if @player_one.role == "x"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[2] == "o" && @board.line_2[1] == "o" && @board.line_3[0] == "o"
         play_match = false
         if @player_one.role == "o"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[0] == "x" && @board.line_2[1] == "x" && @board.line_3[2] == "x"
         play_match = false
         if @player_one.role == "x"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[0] == "o" && @board.line_2[1] == "o" && @board.line_3[0] == "o"
         play_match = false
         if @player_one.role == "o"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[0] == "x" && @board.line_2[0] == "x" && @board.line_3[0] == "x"
         play_match = false
         if @player_one.role == "x"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[0] == "o" && @board.line_2[0] == "o" && @board.line_3[0] == "o"
         play_match = false
         if @player_one.role == "o"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[1] == "x" && @board.line_2[1] == "x" && @board.line_3[1] == "x"
         play_match = false
         if @player_one.role == "x"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[1] == "o" && @board.line_2[1] == "o" && @board.line_3[1] == "o"
         play_match = false
         if @player_one.role == "o"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[2] == "x" && @board.line_2[2] == "x" && @board.line_3[2] == "x"
         play_match = false
         if @player_one.role == "x"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif @board.line_1[2] == "o" && @board.line_2[2] == "o" && @board.line_3[2] == "o"
         play_match = false
         if @player_one.role == "o"
           play_match = false
-          puts "FINISH! #{@player_one.name} won!"
+          puts "FINISH! #{@player_one.name.colorize(:yellow)} won!"
         else
           play_match = false
-          puts "FINISH! #{@player_two.name} won!"
+          puts "FINISH! #{@player_two.name.name.colorize(:green)} won!"
         end
       elsif counter_turn >=9
         play_match = false
-        puts "Cat's game! FINISH!"
+        puts "Cat's game! FINISH!".colorize(:red)
       end
     end
-
   end
 end
