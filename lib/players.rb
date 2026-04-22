@@ -27,10 +27,10 @@ class Player
 
   def set_player_two_role(player_one)
     if player_one.role == "x"
-      self.role = "o"
+      @role = "o"
     else
-      self.role = "x"
+      @role = "x"
     end
-    puts "#{self.name}, you will play with '#{self.role}'"
+    puts "#{@name}, you will play with '#{@role}'"
   end
 end
