@@ -23,8 +23,8 @@ class Match
     @match = true
     @turn = true
 
-    while @match
-      if @turn
+    while @match == true
+      if @turn == true
         puts "#{@player_one.name}, choose your move."
         player_one_move = gets.chomp
 
