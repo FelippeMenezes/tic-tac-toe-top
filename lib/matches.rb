@@ -11,9 +11,18 @@ class Match
   def play_match(player_one, player_two, board)
     match = true
     turn = true
+
+    player_one.name = player_one.ask_player_one_name(player_one)
+    player_one.role = player_one.ask_player_one_role(player_one)
+
+    player_two.name = player_two.ask_player_two_name(player_two)
+    player_two.set_player_two_role(player_one, player_two)
+
+    board.show_board
+
     while match == true
       if turn == true
-        puts "#{player_one.name}, What's choose your move?"
+        puts "#{player_one.name}, choose your move."
         player_one_move = gets.chomp
         if player_one_move == "1" && board.line_1[0] != "o" && board.line_1[0] != "x"
           board.line_1[0] = player_one.role
@@ -44,7 +53,7 @@ class Match
           turn = false
         end
       elsif turn == false
-        puts "#{player_two.name}, What's choose your move?"
+        puts "#{player_two.name}, choose your move."
         player_two_move = gets.chomp
         if player_two_move == "1" && board.line_1[0] != "o" && board.line_1[0] != "x"
           board.line_1[0] = player_two.role
