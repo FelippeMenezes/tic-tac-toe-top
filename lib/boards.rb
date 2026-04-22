@@ -1,29 +1,30 @@
 # frozen_string_literal: true
 
+# This class is a board of Tic-Tac-Toe.
 class Board
-  attr_accessor :line_1, :line_2, :line_3
+  attr_accessor :line1, :line2, :line3
 
-  def initialize(line_1, line_2, line_3)
-    @line_1 = line_1
-    @line_2 = line_2
-    @line_3 = line_3
+  def initialize(line1, line2, line3)
+    @line1 = line1
+    @line2 = line2
+    @line3 = line3
   end
 
   def self.create_board
-    line_1 = ["1", "2", "3"]
-    line_2 = ["4", "5", "6"]
-    line_3 = ["7", "8", "9"]
-    Board.new(line_1, line_2, line_3)
+    line1 = %w[1 2 3]
+    line2 = %w[4 5 6]
+    line3 = %w[7 8 9]
+    Board.new(line1, line2, line3)
   end
 
   def show_board(player_one, player_two)
-    puts ""
-    puts " #{update_line(@line_1, player_one, player_two)} "
-    puts "-----------"
-    puts " #{update_line(@line_2, player_one, player_two)} "
-    puts "-----------"
-    puts " #{update_line(@line_3, player_one, player_two)} "
-    puts ""
+    puts ''
+    puts " #{update_line(@line1, player_one, player_two)} "
+    puts '-----------'
+    puts " #{update_line(@line2, player_one, player_two)} "
+    puts '-----------'
+    puts " #{update_line(@line3, player_one, player_two)} "
+    puts ''
   end
 
   private
