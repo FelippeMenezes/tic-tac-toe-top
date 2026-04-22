@@ -20,7 +20,7 @@ class Match
 
   def start_match
     set_players
-    @board.show_board
+    @board.show_board(@player_one, @player_two)
 
     play_match = true
     player_turn = true
@@ -94,7 +94,7 @@ class Match
           player_turn = true
         end
       end
-      @board.show_board
+      @board.show_board(@player_one, @player_two)
       if @board.line_1 == ["x", "x", "x"] || @board.line_2 == ["x", "x", "x"] || @board.line_3 == ["x", "x", "x"]
         play_match = false
         if @player_one.role == "x"

@@ -16,13 +16,29 @@ class Board
     Board.new(line_1, line_2, line_3)
   end
 
-  def show_board
-    puts "\n"
-    puts " #{@line_1.join(' | ')} "
+  def show_board(player_one, player_two)
+    puts ""
+    puts " #{format_line(@line_1, player_one, player_two)} "
     puts "-----------"
-    puts " #{@line_2.join(' | ')} "
+    puts " #{format_line(@line_2, player_one, player_two)} "
     puts "-----------"
-    puts " #{@line_3.join(' | ')} "
-    puts "\n"
+    puts " #{format_line(@line_3, player_one, player_two)} "
+    puts ""
+  end
+
+  private
+
+  def format_line(line, player_one, player_two)
+    line.map { |cell| color_piece(cell, player_one, player_two) }.join(' | ')
+  end
+
+  def color_piece(cell, player_one, player_two)
+    if cell == player_one.role
+      cell.colorize(:yellow)
+    elsif cell == player_two.role
+      cell.colorize(:green)
+    else
+      cell
+    end
   end
 end
