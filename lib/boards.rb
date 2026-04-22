@@ -15,4 +15,8 @@ class Board
     line_3 = ["7", "8", "9"]
     Board.new(line_1, line_2, line_3)
   end
+
+  def show_board
+    p @line_1, @line_2, @line_3
+  end
 end

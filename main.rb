@@ -14,6 +14,6 @@ player_two.name = player_two.ask_player_two_name(player_two)
 player_two.set_player_two_role(player_one, player_two)
 
 board = Board.create_board
-p board.line_1, board.line_2, board.line_3
+board.show_board
 
 play_match(player_one, player_two, board)
