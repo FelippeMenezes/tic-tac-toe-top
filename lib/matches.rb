@@ -1,6 +1,4 @@
 # frozen_string_literal: true
-require 'pry-byebug'
-
 class Match
   attr_accessor :player_one, :player_two, :board
 
@@ -10,17 +8,17 @@ class Match
     @board = board
   end
 
-  def set_players(player_one, player_two)
-    player_one.name = player_one.ask_player_one_name(player_one)
-    player_one.role = player_one.ask_player_one_role(player_one)
+  def set_players
+    @player_one.name = @player_one.ask_player_one_name(@player_one)
+    @player_one.role = @player_one.ask_player_one_role(@player_one)
 
-    player_two.name = player_two.ask_player_two_name(player_two)
-    player_two.set_player_two_role(player_one, player_two)
+    @player_two.name = @player_two.ask_player_two_name(@player_two)
+    @player_two.set_player_two_role(@player_one, @player_two)
   end
 
-  def start_match(player_one, player_two, board, match)
-    match.set_players(player_one, player_two)
-    board.show_board
+  def start_match
+    set_players
+    @board.show_board
 
     match = true
     turn = true
@@ -30,8 +28,8 @@ class Match
         puts "#{player_one.name}, choose your move."
         player_one_move = gets.chomp
 
-        if player_one_move == "1" && position_1 != "o" && position_1 != "x"
-          position_1 = player_one.role
+        if player_one_move == "1" && board.line_1[0] != "o" && board.line_1[0] != "x"
+          board.line_1[0] = player_one.role
           turn = false
         elsif player_one_move == "2" && board.line_1[1] != "o" && board.line_1[1] != "x"
           board.line_1[1] = player_one.role
@@ -58,9 +56,11 @@ class Match
           board.line_3[2] = player_one.role
           turn = false
         end
+
       elsif turn == false
         puts "#{player_two.name}, choose your move."
         player_two_move = gets.chomp
+
         if player_two_move == "1" && board.line_1[0] != "o" && board.line_1[0] != "x"
           board.line_1[0] = player_two.role
           turn = true
@@ -90,7 +90,7 @@ class Match
           turn = true
         end
       end
-      board.show_board
+      @board.show_board
     end
   end
 end
