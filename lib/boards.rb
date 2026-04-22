@@ -18,27 +18,27 @@ class Board
 
   def show_board(player_one, player_two)
     puts ""
-    puts " #{format_line(@line_1, player_one, player_two)} "
+    puts " #{update_line(@line_1, player_one, player_two)} "
     puts "-----------"
-    puts " #{format_line(@line_2, player_one, player_two)} "
+    puts " #{update_line(@line_2, player_one, player_two)} "
     puts "-----------"
-    puts " #{format_line(@line_3, player_one, player_two)} "
+    puts " #{update_line(@line_3, player_one, player_two)} "
     puts ""
   end
 
   private
 
-  def format_line(line, player_one, player_two)
-    line.map { |cell| color_piece(cell, player_one, player_two) }.join(' | ')
+  def update_line(line, player_one, player_two)
+    line.map { |item| paint_player_item(item, player_one, player_two) }.join(' | ')
   end
 
-  def color_piece(cell, player_one, player_two)
-    if cell == player_one.role
-      cell.colorize(:yellow)
-    elsif cell == player_two.role
-      cell.colorize(:green)
+  def paint_player_item(item, player_one, player_two)
+    if item == player_one.role
+      item.colorize(:yellow)
+    elsif item == player_two.role
+      item.colorize(:green)
     else
-      cell
+      item
     end
   end
 end
