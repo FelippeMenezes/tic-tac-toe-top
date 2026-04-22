@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-require 'pry-byebug'
 
 class Match
   attr_accessor :player_one, :player_two, :board
