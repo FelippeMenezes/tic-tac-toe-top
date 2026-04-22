@@ -25,35 +25,35 @@ class Match
 
     while match == true
       if turn == true
-        puts "#{player_one.name}, choose your move."
+        puts "#{@player_one.name}, choose your move."
         player_one_move = gets.chomp
 
         if player_one_move == "1" && board.line_1[0] != "o" && board.line_1[0] != "x"
-          board.line_1[0] = player_one.role
+          board.line_1[0] = @player_one.role
           turn = false
         elsif player_one_move == "2" && board.line_1[1] != "o" && board.line_1[1] != "x"
-          board.line_1[1] = player_one.role
+          board.line_1[1] = @player_one.role
           turn = false
         elsif player_one_move == "3" && board.line_1[2] != "o" && board.line_1[2] != "x"
-          board.line_1[2] = player_one.role
+          board.line_1[2] = @player_one.role
           turn = false
         elsif player_one_move == "4" && board.line_2[0] != "o" && board.line_2[0] != "x"
-          board.line_2[0] = player_one.role
+          board.line_2[0] = @player_one.role
           turn = false
         elsif player_one_move == "5" && board.line_2[1] != "o" && board.line_2[1] != "x"
-          board.line_2[1] = player_one.role
+          board.line_2[1] = @player_one.role
           turn = false
         elsif player_one_move == "6" && board.line_2[2] != "o" && board.line_2[2] != "x"
-          board.line_2[2] = player_one.role
+          board.line_2[2] = @player_one.role
           turn = false
         elsif player_one_move == "7" && board.line_3[0] != "o" && board.line_3[0] != "x"
-          board.line_3[0] = player_one.role
+          board.line_3[0] = @player_one.role
           turn = false
         elsif player_one_move == "8" && board.line_3[1] != "o" && board.line_3[1] != "x"
-          board.line_3[1] = player_one.role
+          board.line_3[1] = @player_one.role
           turn = false
         elsif player_one_move == "9" && board.line_3[2] != "o" && board.line_3[2] != "x"
-          board.line_3[2] = player_one.role
+          board.line_3[2] = @player_one.role
           turn = false
         end
 
@@ -62,31 +62,31 @@ class Match
         player_two_move = gets.chomp
 
         if player_two_move == "1" && board.line_1[0] != "o" && board.line_1[0] != "x"
-          board.line_1[0] = player_two.role
+          board.line_1[0] = @player_two.role
           turn = true
         elsif player_two_move == "2" && board.line_1[1] != "o" && board.line_1[1] != "x"
-          board.line_1[1] = player_two.role
+          board.line_1[1] = @player_two.role
           turn = true
         elsif player_two_move == "3" && board.line_1[2] != "o" && board.line_1[2] != "x"
-          board.line_1[2] = player_two.role
+          board.line_1[2] = @player_two.role
           turn = true
         elsif player_two_move == "4" && board.line_2[0] != "o" && board.line_2[0] != "x"
-          board.line_2[0] = player_two.role
+          board.line_2[0] = @player_two.role
           turn = true
         elsif player_two_move == "5" && board.line_2[1] != "o" && board.line_2[1] != "x"
-          board.line_2[1] = player_two.role
+          board.line_2[1] = @player_two.role
           turn = true
         elsif player_two_move == "6" && board.line_2[2] != "o" && board.line_2[2] != "x"
-          board.line_2[2] = player_two.role
+          board.line_2[2] = @player_two.role
           turn = true
         elsif player_two_move == "7" && board.line_3[0] != "o" && board.line_3[0] != "x"
-          board.line_3[0] = player_two.role
+          board.line_3[0] = @player_two.role
           turn = true
         elsif player_two_move == "8" && board.line_3[1] != "o" && board.line_3[1] != "x"
-          board.line_3[1] = player_two.role
+          board.line_3[1] = @player_two.role
           turn = true
         elsif player_two_move == "9" && board.line_3[2] != "o" && board.line_3[2] != "x"
-          board.line_3[2] = player_two.role
+          board.line_3[2] = @player_two.role
           turn = true
         end
       end
