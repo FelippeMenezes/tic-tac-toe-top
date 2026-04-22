@@ -97,40 +97,112 @@ class Match
       @board.show_board
       if @board.line_1 == ["x", "x", "x"] || @board.line_2 == ["x", "x", "x"] || @board.line_3 == ["x", "x", "x"]
         play_match = false
-        puts "FINISH! #{@player_one.name} won!"
+        if @player_one.role == "x"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1 == ["o", "o", "o"] || @board.line_2 == ["o", "o", "o"] || @board.line_3 == ["o", "o", "o"]
         play_match = false
-        puts "FINISH! #{@player_two.name} won!"
+        if @player_one.role == "o"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[2] == "x" && @board.line_2[1] == "x" && @board.line_3[0] == "x"
         play_match = false
-        puts "FINISH! #{@player_one.name} won!"
+        if @player_one.role == "x"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[2] == "o" && @board.line_2[1] == "o" && @board.line_3[0] == "o"
         play_match = false
-        puts "FINISH! #{@player_two.name} won!"
+        if @player_one.role == "o"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[0] == "x" && @board.line_2[1] == "x" && @board.line_3[2] == "x"
         play_match = false
-        puts "FINISH! #{@player_one.name} won!"
+        if @player_one.role == "x"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[0] == "o" && @board.line_2[1] == "o" && @board.line_3[0] == "o"
         play_match = false
-        puts "FINISH! #{@player_two.name} won!"
+        if @player_one.role == "o"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[0] == "x" && @board.line_2[0] == "x" && @board.line_3[0] == "x"
         play_match = false
-        puts "FINISH! #{@player_one.name} won!"
+        if @player_one.role == "x"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[0] == "o" && @board.line_2[0] == "o" && @board.line_3[0] == "o"
         play_match = false
-        puts "FINISH! #{@player_two.name} won!"
+        if @player_one.role == "o"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[1] == "x" && @board.line_2[1] == "x" && @board.line_3[1] == "x"
         play_match = false
-        puts "FINISH! #{@player_one.name} won!"
+        if @player_one.role == "x"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[1] == "o" && @board.line_2[1] == "o" && @board.line_3[1] == "o"
         play_match = false
-        puts "FINISH! #{@player_two.name} won!"
+        if @player_one.role == "o"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[2] == "x" && @board.line_2[2] == "x" && @board.line_3[2] == "x"
         play_match = false
-        puts "FINISH! #{@player_one.name} won!"
+        if @player_one.role == "x"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif @board.line_1[2] == "o" && @board.line_2[2] == "o" && @board.line_3[2] == "o"
         play_match = false
-        puts "FINISH! #{@player_two.name} won!"
+        if @player_one.role == "o"
+          play_match = false
+          puts "FINISH! #{@player_one.name} won!"
+        else
+          play_match = false
+          puts "FINISH! #{@player_two.name} won!"
+        end
       elsif counter_turn >=9
         play_match = false
         puts "Cat's game! FINISH!"

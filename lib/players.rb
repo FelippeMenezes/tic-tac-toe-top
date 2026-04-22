@@ -21,7 +21,13 @@ class Player
   def ask_player_one_role
     puts "#{@name}, choose your role('x' or 'o'):"
     @role = gets.chomp
-    puts "#{@name}, you will play with '#{@role}'"
+    puts @role.class
+    if @role != "x" && @role != "o"
+      puts "Wrong choice, try again!"
+      ask_player_one_role
+    else
+      puts "#{@name}, you will play with '#{@role}'"
+    end
     @role
   end
 
