@@ -22,41 +22,43 @@ class Match
     set_players
     @board.show_board
 
-    @match = true
-    @turn = true
+    @play_match = true
+    @player_turn = true
+    @conuter_turn = 0
 
-    while @match == true
-      if @turn == true
+    while @play_match == true
+      @conuter_turn += 1
+      if @player_turn == true
         puts "#{@player_one.name}, choose your move."
         player_one_move = gets.chomp
 
         if player_one_move == "1" && @board.line_1[0] != "o" && @board.line_1[0] != "x"
           @board.line_1[0] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "2" && @board.line_1[1] != "o" && @board.line_1[1] != "x"
           @board.line_1[1] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "3" && @board.line_1[2] != "o" && @board.line_1[2] != "x"
           @board.line_1[2] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "4" && @board.line_2[0] != "o" && @board.line_2[0] != "x"
           @board.line_2[0] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "5" && @board.line_2[1] != "o" && @board.line_2[1] != "x"
           @board.line_2[1] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "6" && @board.line_2[2] != "o" && @board.line_2[2] != "x"
           @board.line_2[2] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "7" && @board.line_3[0] != "o" && @board.line_3[0] != "x"
           @board.line_3[0] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "8" && @board.line_3[1] != "o" && @board.line_3[1] != "x"
           @board.line_3[1] = @player_one.role
-          @turn = false
+          @player_turn = false
         elsif player_one_move == "9" && @board.line_3[2] != "o" && @board.line_3[2] != "x"
           @board.line_3[2] = @player_one.role
-          @turn = false
+          @player_turn = false
         end
 
       else
@@ -65,64 +67,73 @@ class Match
 
         if player_two_move == "1" && @board.line_1[0] != "o" && @board.line_1[0] != "x"
           @board.line_1[0] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "2" && @board.line_1[1] != "o" && @board.line_1[1] != "x"
           @board.line_1[1] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "3" && @board.line_1[2] != "o" && @board.line_1[2] != "x"
           @board.line_1[2] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "4" && @board.line_2[0] != "o" && @board.line_2[0] != "x"
           @board.line_2[0] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "5" && @board.line_2[1] != "o" && @board.line_2[1] != "x"
           @board.line_2[1] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "6" && @board.line_2[2] != "o" && @board.line_2[2] != "x"
           @board.line_2[2] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "7" && @board.line_3[0] != "o" && @board.line_3[0] != "x"
           @board.line_3[0] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "8" && @board.line_3[1] != "o" && @board.line_3[1] != "x"
           @board.line_3[1] = @player_two.role
-          @turn = true
+          @player_turn = true
         elsif player_two_move == "9" && @board.line_3[2] != "o" && @board.line_3[2] != "x"
           @board.line_3[2] = @player_two.role
-          @turn = true
+          @player_turn = true
         end
       end
       @board.show_board
       if @board.line_1 == ["x", "x", "x"] || @board.line_2 == ["x", "x", "x"] || @board.line_3 == ["x", "x", "x"]
-        @match = false
-        puts "FINISH! #{@player_one.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_one.name} won!"
       elsif @board.line_1 == ["o", "o", "o"] || @board.line_2 == ["o", "o", "o"] || @board.line_3 == ["o", "o", "o"]
-        @match = false
-        puts "FINISH! #{@player_two.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_two.name} won!"
+      elsif @board.line_1[2] == "x" && @board.line_2[1] == "x" && @board.line_3[0] == "x"
+        @play_match = false
+        puts "FINISH! #{@player_one.name} won!"
+      elsif @board.line_1[2] == "o" && @board.line_2[1] == "o" && @board.line_3[0] == "o"
+        @play_match = false
+        puts "FINISH! #{@player_two.name} won!"
       elsif @board.line_1[0] == "x" && @board.line_2[1] == "x" && @board.line_3[2] == "x"
-        @match = false
-        puts "FINISH! #{@player_one.name} ganhou!"
-      elsif @board.line_1[0] == "o" && @board.line_2[1] == "o" && @bord.line_3[0] == "o"
-        @match = false
-        puts "FINISH! #{@player_two.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_one.name} won!"
+      elsif @board.line_1[0] == "o" && @board.line_2[1] == "o" && @board.line_3[0] == "o"
+        @play_match = false
+        puts "FINISH! #{@player_two.name} won!"
       elsif @board.line_1[0] == "x" && @board.line_2[0] == "x" && @board.line_3[0] == "x"
-        @match = false
-        puts "FINISH! #{@player_one.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_one.name} won!"
       elsif @board.line_1[0] == "o" && @board.line_2[0] == "o" && @board.line_3[0] == "o"
-        @match = false
-        puts "FINISH! #{@player_two.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_two.name} won!"
       elsif @board.line_1[1] == "x" && @board.line_2[1] == "x" && @board.line_3[1] == "x"
-        @match = false
-        puts "FINISH! #{@player_one.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_one.name} won!"
       elsif @board.line_1[1] == "o" && @board.line_2[1] == "o" && @board.line_3[1] == "o"
-        @match = false
-        puts "FINISH! #{@player_two.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_two.name} won!"
       elsif @board.line_1[2] == "x" && @board.line_2[2] == "x" && @board.line_3[2] == "x"
-        @match = false
-        puts "FINISH! #{@player_one.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_one.name} won!"
       elsif @board.line_1[2] == "o" && @board.line_2[2] == "o" && @board.line_3[2] == "o"
-        @match = false
-        puts "FINISH! #{@player_two.name} ganhou!"
+        @play_match = false
+        puts "FINISH! #{@player_two.name} won!"
+      elsif @conuter_turn >=9
+        @play_match = false
+        puts "Cat's game! FINISH!"
       end
     end
 
