@@ -8,7 +8,7 @@ class Match
     @board = board
   end
 
-  def play_match(player_one, player_two, board)
+  def start_match(player_one, player_two, board)
     match = true
     turn = true
 
