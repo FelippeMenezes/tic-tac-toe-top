@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+require 'pry-byebug'
+
 class Match
   attr_accessor :player_one, :player_two, :board
 
@@ -91,6 +93,38 @@ class Match
         end
       end
       @board.show_board
+      if @board.line_1 == ["x", "x", "x"] || @board.line_2 == ["x", "x", "x"] || @board.line_3 == ["x", "x", "x"]
+        @match = false
+        puts "FINISH! #{@player_one.name} ganhou!"
+      elsif @board.line_1 == ["o", "o", "o"] || @board.line_2 == ["o", "o", "o"] || @board.line_3 == ["o", "o", "o"]
+        @match = false
+        puts "FINISH! #{@player_two.name} ganhou!"
+      elsif @board.line_1[0] == "x" && @board.line_2[1] == "x" && @board.line_3[2] == "x"
+        @match = false
+        puts "FINISH! #{@player_one.name} ganhou!"
+      elsif @board.line_1[0] == "o" && @board.line_2[1] == "o" && @bord.line_3[0] == "o"
+        @match = false
+        puts "FINISH! #{@player_two.name} ganhou!"
+      elsif @board.line_1[0] == "x" && @board.line_2[0] == "x" && @board.line_3[0] == "x"
+        @match = false
+        puts "FINISH! #{@player_one.name} ganhou!"
+      elsif @board.line_1[0] == "o" && @board.line_2[0] == "o" && @board.line_3[0] == "o"
+        @match = false
+        puts "FINISH! #{@player_two.name} ganhou!"
+      elsif @board.line_1[1] == "x" && @board.line_2[1] == "x" && @board.line_3[1] == "x"
+        @match = false
+        puts "FINISH! #{@player_one.name} ganhou!"
+      elsif @board.line_1[1] == "o" && @board.line_2[1] == "o" && @board.line_3[1] == "o"
+        @match = false
+        puts "FINISH! #{@player_two.name} ganhou!"
+      elsif @board.line_1[2] == "x" && @board.line_2[2] == "x" && @board.line_3[2] == "x"
+        @match = false
+        puts "FINISH! #{@player_one.name} ganhou!"
+      elsif @board.line_1[2] == "o" && @board.line_2[2] == "o" && @board.line_3[2] == "o"
+        @match = false
+        puts "FINISH! #{@player_two.name} ganhou!"
+      end
     end
+
   end
 end
