@@ -17,6 +17,12 @@ class Board
   end
 
   def show_board
-    p @line_1, @line_2, @line_3
+    puts "\n"
+    puts " #{@line_1.join(' | ')} "
+    puts "-----------"
+    puts " #{@line_2.join(' | ')} "
+    puts "-----------"
+    puts " #{@line_3.join(' | ')} "
+    puts "\n"
   end
 end
