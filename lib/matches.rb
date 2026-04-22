@@ -10,14 +10,6 @@ class Match
     @board = board
   end
 
-  def set_players
-    @player_one.name = @player_one.ask_player_one_name
-    @player_one.role = @player_one.ask_player_one_role
-
-    @player_two.name = @player_two.ask_player_two_name
-    @player_two.set_player_two_role(@player_one)
-  end
-
   def start_match
     set_players
     @board.show_board(@player_one, @player_two)
@@ -208,5 +200,15 @@ class Match
         puts "Cat's game! FINISH!".colorize(:red)
       end
     end
+  end
+
+  private
+
+  def set_players
+    @player_one.name = @player_one.ask_player_one_name
+    @player_one.role = @player_one.ask_player_one_role
+
+    @player_two.name = @player_two.ask_player_two_name
+    @player_two.set_player_two_role(@player_one)
   end
 end
