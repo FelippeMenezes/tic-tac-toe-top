@@ -8,23 +8,21 @@ class Player
     @role = role
   end
 
-  def ask_player_one_name(player)
+  def ask_player_one_name
     puts "Player 1 - What's is yor name?"
-    player.name = gets.chomp
-    player.name
+    @name = gets.chomp
   end
 
-  def ask_player_two_name(player)
+  def ask_player_two_name
     puts "Player 2 - What's is yor name?"
-    player.name = gets.chomp
-    player.name
+    @name = gets.chomp
   end
 
-  def ask_player_one_role(player)
-    puts "#{player.name}, choose your role('x' or 'o'):"
-    player.role = gets.chomp
-    puts "#{player.name}, you will play with '#{player.role}'"
-    player.role
+  def ask_player_one_role
+    puts "#{@name}, choose your role('x' or 'o'):"
+    @role = gets.chomp
+    puts "#{@name}, you will play with '#{@role}'"
+    @role
   end
 
   def set_player_two_role(player_one, player_two)
