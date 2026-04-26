@@ -24,7 +24,6 @@ class Player
   def ask_player_one_role
     puts "#{@name.colorize(:yellow)}, choose your role('x' or 'o'):"
     @role = gets.chomp
-    puts @role.class
     if @role != 'x' && @role != 'o'
       puts 'Wrong choice, try again!'
       ask_player_one_role
