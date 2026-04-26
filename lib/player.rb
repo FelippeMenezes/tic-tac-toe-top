@@ -12,12 +12,14 @@ class Player
   end
 
   def ask_player_one_name
-    puts "Player 1 - What's is yor name?"
+    print "Player 1 ".colorize(:yellow)
+    puts "- What's is yor name?"
     @name = gets.chomp
   end
 
   def ask_player_two_name
-    puts "Player 2 - What's is yor name?"
+    print "Player 2".colorize(:green)
+    puts " - What's is yor name?"
     @name = gets.chomp
   end
 
