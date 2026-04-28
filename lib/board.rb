@@ -18,6 +18,7 @@ class Board
   end
 
   def show_board(player_one, player_two)
+    system('clear')
     puts ''
     puts " #{update_line(@line1, player_one, player_two)} "
     puts '-----------'
