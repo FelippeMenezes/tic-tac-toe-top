@@ -13,6 +13,7 @@ class Match
   end
 
   def start_match
+    system('clear')
     set_players
     @board.show_board(@player_one, @player_two)
 
